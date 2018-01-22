@@ -28,7 +28,7 @@
   args:
     chdir: "{{ compiling_path }}/{{ pecl_php_extension }}-{{ pecl_php_extension_version }}"
   with_items:
-    - "phpsize"
+    - "phpize"
     - "./configure {{ pecl_php_extension_option }}"
     - "make"
     - "make install"
