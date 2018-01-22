@@ -17,7 +17,7 @@
 # Extract PECL PHP extension
 - name: "Extract PECL PHP {{ pecl_php_extension }} extension"
   unarchive:
-    src: "{{ pecl_php_extension }}-{{ pecl_php_extension_version }}.tgz"
+    src: "{{ compiling_path }}/{{ pecl_php_extension }}-{{ pecl_php_extension_version }}.tgz"
     dest: "{{ compiling_path }}"
     remote_src: yes
 
