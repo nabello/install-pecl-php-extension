@@ -1,0 +1,6 @@
+---
+pecl_php_extension: "xdebug"
+pecl_php_extension_version: "2.5.5"
+pecl_php_extension_url: "https://pecl.php.net/get/{{ pecl_php_extension }}-{{ pecl_php_extension_version }}.tgz"
+compiling_path: '/home/sources'
+pecl_php_extension_option: '--enable-xdebug'

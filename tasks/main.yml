@@ -1,0 +1,42 @@
+---
+# Make sure necessary directories exist
+- file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "{{ compiling_path }}"
+
+
+# Download PECL PHP extension
+- name: "Download PECL PHP {{ pecl_php_extension }} extension"
+  get_url:
+    url: "{{ pecl_php_extension_url }}"
+    dest: "{{ compiling_path }}"
+
+
+# Extract PECL PHP extension
+- name: "Extract PECL PHP {{ pecl_php_extension }} extension"
+  unarchive:
+    src: "{{ pecl_php_extension }}-{{ pecl_php_extension_version }}.tgz"
+    dest: "{{ compiling_path }}"
+    remote_src: yes
+
+
+# Configure & Make PECL PHP extension
+- name: "Configure & Make PECL PHP {{ pecl_php_extension }} extension"
+  command: "{{ item }}"
+  args:
+    chdir: "{{ compiling_path }}/{{ pecl_php_extension }}-{{ pecl_php_extension_version }}"
+  with_items:
+    - "phpsize"
+    - "./configure {{ pecl_php_extension_option }}"
+    - "make"
+    - "make install"
+
+
+# Clean up
+- file:
+    path: "{{ item }}"
+    state: absent
+  with_items:
+    - "{{ compiling_path }}"
