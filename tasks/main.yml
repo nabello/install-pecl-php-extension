@@ -34,6 +34,13 @@
     - "make install"
 
 
+# Configure the PECL PHP extension
+- name: Configure the PECL PHP extension
+  template:
+    src="{{ pecl_php_extension }}.ini.j2"
+    dest="{{ php_configuration_dir }}/php.d/{{ pecl_php_extension }}.ini"
+
+
 # Clean up
 - file:
     path: "{{ item }}"

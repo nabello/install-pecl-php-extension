@@ -1,0 +1,37 @@
+[XDebug]
+{% if (xdebug_zend_extension is defined) %}
+zend_extension="{{ xdebug_zend_extension }}"
+{% endif %}
+{% if (xdebug_coverage_enable is defined) %}
+xdebug.coverage_enable={{ xdebug_coverage_enable }}
+{% endif %}
+{% if (xdebug_default_enable is defined) %}
+xdebug.default_enable={{ xdebug_default_enable }}
+{% endif %}
+{% if (xdebug_remote_enable is defined) %}
+xdebug.remote_enable={{ xdebug_remote_enable }}
+{% endif %}
+{% if (xdebug_remote_connect_back is defined) %}
+xdebug.remote_connect_back={{ xdebug_remote_connect_back }}
+{% endif %}
+{% if (xdebug_remote_host is defined) %}
+xdebug.remote_host={{ xdebug_remote_host }}
+{% endif %}
+{% if (xdebug_remote_port is defined) %}
+xdebug.remote_port={{ xdebug_remote_port }}
+{% endif %}
+{% if (xdebug_remote_handler is defined) %}
+xdebug.remote_handler={{ xdebug_remote_handler }}
+{% endif %}
+{% if (xdebug_remote_log is defined) %}
+xdebug.remote_log={{ xdebug_remote_log }}
+{% endif %}
+{% if (xdebug_remote_autostart is defined) %}
+xdebug.remote_autostart={{ xdebug_remote_autostart }}
+{% endif %}
+{% if (xdebug_idekey is defined) %}
+xdebug.idekey="{{ xdebug_idekey }}"
+{% endif %}
+{% if (xdebug_max_nesting_level is defined) %}
+xdebug.max_nesting_level={{ xdebug_max_nesting_level }}
+{% endif %}
