@@ -7,18 +7,7 @@ pecl_php_extension_option: '--enable-xdebug'
 php_configuration_dir: '/etc'
 
 
-#------------------------
-# PECL EXTENSION - XDebug
-#------------------------
-xdebug_zend_extension: 'xdebug.so'
-xdebug_coverage_enable: '1'
-xdebug_default_enable: '1'
-xdebug_remote_enable: 'on'
-xdebug_remote_connect_back: ''
-xdebug_remote_host: 'localhost'
-xdebug_remote_port: '9000'
-xdebug_remote_handler: 'dbgp'
-xdebug_remote_log: '/tmp/xdebug.log'
-xdebug_remote_autostart: 'false'
-xdebug_idekey: 'PHPSTORM'
-xdebug_max_nesting_level: '256'
+#---------------
+# PECL EXTENSION
+#---------------
+pecl_configurations: {}
